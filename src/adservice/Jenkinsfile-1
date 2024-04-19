@@ -25,13 +25,14 @@ node {
     }
 
     stage('Build image') {
-        if (isMyDirChanged()) {
+        app = docker.build("wpatterson134/adservice", "-f ./src/adservice/Dockerfile .")
+       /* if (isMyDirChanged()) {
 
           app = docker.build("wpatterson134/adservice", "-f ./src/adservice/Dockerfile .")
         } else {
             currentBuild.result = "SUCCESS"
             return
-    }
+    }*/
 }
     if (currentBuild.result == "SUCCESS") {
         return
