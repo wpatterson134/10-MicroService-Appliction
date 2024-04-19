@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/wpatterson134/AWS-Projects.git'
+            }
+        }
+        stage('terraform init') {
+            steps {
+                dir('./instavote/terraform/') {
+                    script {
+                        sh 'ls'
+                        sh 'terraform init'
+                    }
+                }
+            }
+        }
+        stage('terraform apply') {
+            steps {
+                dir('./instavote/terraform/') {
+                    script {
+                       withCredentials([[
+        $class: 'AmazonWebServicesCredentialsBinding', 
+        accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
+        secretKeyVariable: 'AWS_SECRET_ACCESS_KEY',
+        credentialsId: 'wp-aws-training-general'
+    ]]) {
+        sh 'terraform ${action} --auto-approve'
+    } 
+                    }
+                }
+               
+            }
+        }
+    }
+}
