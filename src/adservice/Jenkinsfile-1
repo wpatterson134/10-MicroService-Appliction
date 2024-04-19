@@ -1,17 +1,18 @@
-/*@NonCPS
+@NonCPS
 boolean isMyDirChanged() {
   for (changeLogSet in currentBuild.changeSets) { 
     for (entry in changeLogSet.getItems()) { // for each commit in the detected changes
       for (file in entry.getAffectedFiles()) {
         println(file.getPath() + ":lafa;sdlifjadoifj")
         if (file.getPath().matches("src/adservice(/.*)")) {
+          println("Hey it worked")
           return true
         }
       }
     }
   }
   return false
-} */
+} 
 
 
 node {
@@ -25,14 +26,13 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build("wpatterson134/adservice", "-f ./src/adservice/Dockerfile ./src/adservice")
-       /* if (isMyDirChanged()) {
+       if (isMyDirChanged()) {
 
-          app = docker.build("wpatterson134/adservice", "-f ./src/adservice/Dockerfile .")
+          app = docker.build("wpatterson134/adservice", "-f ./src/adservice/Dockerfile ./src/adservice")
         } else {
             currentBuild.result = "SUCCESS"
             return
-    }*/
+    }
 }
     if (currentBuild.result == "SUCCESS") {
         return
