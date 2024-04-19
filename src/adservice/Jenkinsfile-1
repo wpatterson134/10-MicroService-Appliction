@@ -25,7 +25,7 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build("wpatterson134/adservice", "-f ./src/adservice/Dockerfile .")
+        app = docker.build("wpatterson134/adservice", "-f ./src/adservice/Dockerfile ./src/adservice")
        /* if (isMyDirChanged()) {
 
           app = docker.build("wpatterson134/adservice", "-f ./src/adservice/Dockerfile .")
