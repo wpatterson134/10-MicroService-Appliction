@@ -42,7 +42,7 @@ spec:
                 - ALL
             privileged: false
             readOnlyRootFilesystem: true
-          image: frontend
+          image: wpatterson134/frontend:latest
           ports:
           - containerPort: 8080
           readinessProbe:
