@@ -41,7 +41,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: wpatterson134/cartservice:latest
+        image: wpatterson134/cartservice:8
         ports:
         - containerPort: 7070
         env:
