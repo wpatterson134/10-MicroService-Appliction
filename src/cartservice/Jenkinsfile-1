@@ -5,6 +5,7 @@ boolean isMyDirChanged() {
       for (file in entry.getAffectedFiles()) {
         println(file.getPath())
         if (file.getPath().matches("src/cartservice(/.*)")) {
+          println("Change was made in cartservice folder")
           return true
         }
       }
