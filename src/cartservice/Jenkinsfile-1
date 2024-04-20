@@ -27,7 +27,7 @@ node {
 
     stage('Build image') {
        if (isMyDirChanged()) {
-          app = docker.build("wpatterson134/cartservice", "-f ./src/cartservice/Dockerfile ./src/cartservice")
+          app = docker.build("wpatterson134/cartservice", "-f ./src/cartservice/Dockerfile ./src/cartservice/src")
         } else {
             currentBuild.result = "SUCCESS"
             return
