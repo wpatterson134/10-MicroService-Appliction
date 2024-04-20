@@ -11,6 +11,7 @@ boolean isMyDirChanged() {
       }
     }
   }
+  println("No changes made in checkoutservice folder")
   return false
 } 
 
