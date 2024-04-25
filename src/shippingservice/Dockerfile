@@ -37,6 +37,6 @@ ENV APP_PORT=50051
 # Default behavior - a failure prints a stack trace for the current goroutine.
 # See https://golang.org/pkg/runtime/
 ENV GOTRACEBACK=single
-
+# testing
 EXPOSE 50051
 CMD ["/src/shippingservice"]
