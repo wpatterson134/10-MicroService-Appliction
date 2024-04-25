@@ -41,4 +41,4 @@ COPY --from=builder /usr/local/lib/python3.10/ /usr/local/lib/python3.10/
 COPY . .
 
 EXPOSE 8080
-ENTRYPOINT [ "python", "email_server.py" ]
+CMD [ "python", "email_server.py" ]

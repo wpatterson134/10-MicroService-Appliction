@@ -39,7 +39,7 @@ COPY . .
 
 EXPOSE 7000
 
-ENTRYPOINT [ "node", "server.js" ]
+CMD [ "node", "server.js" ]
 
 FROM without-grpc-health-probe-bin
 

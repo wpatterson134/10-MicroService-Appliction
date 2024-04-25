@@ -40,4 +40,4 @@ COPY products.json .
 ENV GOTRACEBACK=single
 
 EXPOSE 3550
-ENTRYPOINT ["/src/server"]
+CMD ["/src/server"]
