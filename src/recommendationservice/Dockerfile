@@ -42,5 +42,5 @@ COPY . .
 # set listen port
 ENV PORT "8080"
 EXPOSE 8080
-
+# testing
 CMD ["python", "recommendation_server.py"]
