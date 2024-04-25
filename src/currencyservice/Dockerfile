@@ -38,7 +38,7 @@ COPY --from=builder /usr/src/app/node_modules ./node_modules
 COPY . .
 
 EXPOSE 7000
-
+# test
 CMD [ "node", "server.js" ]
 
 FROM without-grpc-health-probe-bin
