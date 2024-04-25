@@ -41,7 +41,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: wpatterson134/paymentservice:latest
+        image: wpatterson134/paymentservice:2
         ports:
         - containerPort: 50051
         env:
