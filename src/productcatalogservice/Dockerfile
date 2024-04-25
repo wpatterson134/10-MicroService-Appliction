@@ -38,6 +38,6 @@ COPY products.json .
 # Default behavior - a failure prints a stack trace for the current goroutine.
 # See https://golang.org/pkg/runtime/
 ENV GOTRACEBACK=single
-
+# testing 
 EXPOSE 3550
 CMD ["/src/server"]
