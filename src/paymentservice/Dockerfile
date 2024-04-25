@@ -37,7 +37,7 @@ WORKDIR /usr/src/app
 COPY --from=builder /usr/src/app/node_modules ./node_modules
 
 COPY . .
-
+# testing
 EXPOSE 50051
 
 CMD [ "node", "index.js" ]
