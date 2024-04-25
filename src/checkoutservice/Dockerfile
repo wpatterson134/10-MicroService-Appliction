@@ -40,5 +40,5 @@ COPY --from=builder /checkoutservice /src/checkoutservice
 ENV GOTRACEBACK=single
 
 EXPOSE 5050
-#ENTRYPOINT ["/src/checkoutservice"]
+ENTRYPOINT ["/src/checkoutservice"]
 CMD ["/src/checkoutservice"]
