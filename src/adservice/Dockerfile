@@ -37,6 +37,6 @@ RUN mkdir -p /opt/cprof && \
 
 WORKDIR /app
 COPY --from=builder /app .
-
+#testing sonarqube
 EXPOSE 9555
 CMD ["/app/build/install/hipstershop/bin/AdService"]
