@@ -48,25 +48,25 @@ node {
     }
 
     stage('Test image') {
-      script {
-                    sh "$SCANNER_HOME/bin/sonar-scanner \
-                        -Dsonar.projectKey=adservice-buildimage \
-                        -Dsonar.projectName=adservice-buildimage \
-                        -Dsonar.java.binaries=. \
-                        -Dsonar.host.url=http://sonarqube_container_host:9000 \
-                        -Dsonar.login=your_sonarqube_auth_token"
-                }
+      // script {
+      //               sh "$SCANNER_HOME/bin/sonar-scanner \
+      //                   -Dsonar.projectKey=adservice-buildimage \
+      //                   -Dsonar.projectName=adservice-buildimage \
+      //                   -Dsonar.java.binaries=. \
+      //                   -Dsonar.host.url=http://sonarqube_container_host:9000 \
+      //                   -Dsonar.login=your_sonarqube_auth_token"
+      //           }
 
        
-//     // Set up the SonarQube environment
-//     withSonarQubeEnv('sonar') {
-//         // Execute the SonarQube Scanner command
-//         sh '''$SCANNER_HOME/bin/sonar-scanner \
-//             -Dsonar.projectKey=adservice-buildimage \
-//             -Dsonar.projectName=adservice-buildimage \
-//             -Dsonar.java.binaries=. '''
+    // Set up the SonarQube environment
+    withSonarQubeEnv('sonar') {
+        // Execute the SonarQube Scanner command
+        sh '''$SCANNER_HOME/bin/sonar-scanner \
+            -Dsonar.projectKey=adservice-buildimage \
+            -Dsonar.projectName=adservice-buildimage \
+            -Dsonar.java.sources=. '''
     
-// }
+}
         
         
     }
