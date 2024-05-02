@@ -14,9 +14,11 @@ boolean isMyDirChanged() {
   return false
 } 
 
-environment {
-  SCANNER_HOME = tool 'sonar-scanner'
-}
+// environment {
+//   SCANNER_HOME = tool 'sonar-scanner'
+// }
+
+def SCANNER_HOME = tool 'sonar-scanner'
 
 
 node {
