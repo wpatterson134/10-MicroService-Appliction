@@ -48,8 +48,6 @@ node {
     }
 
     stage('Test image') {
-      
-    //withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
       withSonarQubeEnv(installationName: 'sonar') {
         // Execute the SonarQube Scanner command
         sh "$SCANNER_HOME/bin/sonar-scanner \
@@ -57,10 +55,6 @@ node {
             -Dsonar.projectName=adservice-buildimage \
             -Dsonar.java.binaries=."
       }
-    //}
-   
-        
-        
     }
 
     stage('Push image') {
