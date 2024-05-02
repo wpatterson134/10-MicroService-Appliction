@@ -45,9 +45,17 @@ node {
   
 
         app.inside {
-            withSonarQubeEnv('sonar') {
-              sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=adservice-buildimage -Dsonar.projectName=adservice-buildimage -Dsonar.java.binaries=. '''
-            }
+            // withSonarQubeEnv('sonar') {
+            //   sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=adservice-buildimage -Dsonar.projectName=adservice-buildimage -Dsonar.java.binaries=. '''
+            // }
+            script {
+                    sh "$SCANNER_HOME/bin/sonar-scanner \
+                        -Dsonar.projectKey=adservice-buildimage \
+                        -Dsonar.projectName=adservice-buildimage \
+                        -Dsonar.sources=. \
+                        -Dsonar.host.url=http://ec2-54-164-130-15.compute-1.amazonaws.com:9000 \
+                        -Dsonar.login=squ_7d75be805d0b922368ff51ba54c1614972f45671"
+                }
             
         }
     }
