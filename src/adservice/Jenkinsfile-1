@@ -18,12 +18,14 @@ boolean isMyDirChanged() {
 //   SCANNER_HOME = tool 'sonar-scanner'
 // }
 
-def SCANNER_HOME = tool 'sonar-scanner'
+
 
 
 node {
 
     def app
+
+    def SCANNER_HOME = tool 'sonar-scanner'
 
     stage('Clone repository') {
       
