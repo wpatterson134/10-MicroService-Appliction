@@ -48,25 +48,20 @@ node {
     }
 
     stage('Test image') {
-      // script {
-      //               sh "$SCANNER_HOME/bin/sonar-scanner \
-      //                   -Dsonar.projectKey=adservice-buildimage \
-      //                   -Dsonar.projectName=adservice-buildimage \
-      //                   -Dsonar.java.binaries=. \
-      //                   -Dsonar.host.url=http://sonarqube_container_host:9000 \
-      //                   -Dsonar.login=your_sonarqube_auth_token"
-      //           }
-
-       
-    // Set up the SonarQube environment
-    withSonarQubeEnv('sonar') {
+      
+    withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
+      withSonarQubeEnv('sonar') {
         // Execute the SonarQube Scanner command
-        sh '''$SCANNER_HOME/bin/sonar-scanner \
+        sh "$SCANNER_HOME/bin/sonar-scanner \
             -Dsonar.projectKey=adservice-buildimage \
             -Dsonar.projectName=adservice-buildimage \
-            -Dsonar.java.sources=. '''
+            -Dsonar.java.binaries=. \
+            -Dsonar.host.url=http://ec2-54-164-130-15.compute-1.amazonaws.com:9000 \
+            -Dsonar.login=${SONAR_TOKEN}"
     
-}
+      }
+    }
+   
         
         
     }
