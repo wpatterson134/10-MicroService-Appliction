@@ -46,7 +46,7 @@ node {
 
         app.inside {
             withSonarQubeEnv('sonar') {
-              sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=adservice-buildimage -Dsonar.projectName=adservice-buildimage -Dsonar.java.binaries=.'''
+              sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=adservice-buildimage -Dsonar.projectName=adservice-buildimage -Dsonar.java.binaries=. '''
             }
             
         }
