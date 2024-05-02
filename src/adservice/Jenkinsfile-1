@@ -50,7 +50,7 @@ node {
     stage('Test image') {
   
 
-       steps {
+       
     // Set up the SonarQube environment
     withSonarQubeEnv('sonar') {
         // Execute the SonarQube Scanner command
@@ -58,7 +58,7 @@ node {
             -Dsonar.projectKey=adservice-buildimage \
             -Dsonar.projectName=adservice-buildimage \
             -Dsonar.java.binaries=. '''
-    }
+    
 }
 
             
