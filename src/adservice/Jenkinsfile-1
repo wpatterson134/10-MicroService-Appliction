@@ -44,7 +44,7 @@ node {
     stage('Test image') {
   
 
-        app.inside {
+        //app.inside {
             // withSonarQubeEnv('sonar') {
             //   sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=adservice-buildimage -Dsonar.projectName=adservice-buildimage -Dsonar.java.binaries=. '''
             // }
@@ -57,7 +57,7 @@ node {
                         -Dsonar.login=squ_7d75be805d0b922368ff51ba54c1614972f45671"
                 }
             
-        }
+        //}
     }
 
     stage('Push image') {
