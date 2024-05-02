@@ -49,18 +49,15 @@ node {
 
     stage('Test image') {
       
-    withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
-      withSonarQubeEnv('sonar') {
+    //withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
+      withSonarQubeEnv(installationName: 'sonar') {
         // Execute the SonarQube Scanner command
         sh "$SCANNER_HOME/bin/sonar-scanner \
             -Dsonar.projectKey=adservice-buildimage \
             -Dsonar.projectName=adservice-buildimage \
-            -Dsonar.java.binaries=. \
-            -Dsonar.host.url=http://ec2-54-164-130-15.compute-1.amazonaws.com:9000 \
-            -Dsonar.login=${SONAR_TOKEN}"
-    
+            -Dsonar.java.binaries=."
       }
-    }
+    //}
    
         
         
