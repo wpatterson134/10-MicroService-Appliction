@@ -53,6 +53,7 @@ node {
         sh "$SCANNER_HOME/bin/sonar-scanner \
             -Dsonar.projectKey=adservice-buildimage \
             -Dsonar.projectName=adservice-buildimage \
+            -Dsonar.source=. \
             -Dsonar.java.binaries=."
       }
     }
