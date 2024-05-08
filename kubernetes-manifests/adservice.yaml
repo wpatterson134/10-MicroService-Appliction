@@ -41,7 +41,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: wpatterson134/adservice:5
+        image: wpatterson134/adservice:6
         ports:
         - containerPort: 9555
         env:
