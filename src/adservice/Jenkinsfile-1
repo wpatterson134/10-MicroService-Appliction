@@ -54,6 +54,7 @@ node {
             -Dsonar.projectKey=adservice-buildimage \
             -Dsonar.projectName=adservice-buildimage \
             -Dsonar.source=. \
+            -Dsonar.nodejs.executable=/root/.nvm/versions/node/v20.13.0/bin/node \
             -Dsonar.java.binaries=."
       }
     }
