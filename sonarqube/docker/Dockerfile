@@ -1,18 +1,14 @@
-# Use a base image of your choice (e.g., Debian or Alpine)
+# Use Alpine Linux as the base image
 FROM sonarqube:lts-community
-
-# Install Node.js and npm
-RUN apt-get update && \
-    apt-get install -y curl && \
-    curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && \
-    apt-get install -y nodejs && \
-    rm -rf /var/lib/apt/lists/*
 
 # Set the working directory in the container
 WORKDIR /app
 
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
+
+# Install Node.js and npm
+RUN apk add --update nodejs npm
 
 # Install dependencies
 RUN npm install
