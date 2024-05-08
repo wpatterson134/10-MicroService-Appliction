@@ -49,7 +49,7 @@ node {
 
     stage('Test image') {
       withSonarQubeEnv(installationName: 'sonar') {
-        // Execute the SonarQube Scanner command
+        
         sh "$SCANNER_HOME/bin/sonar-scanner \
             -Dsonar.projectKey=adservice-buildimage \
             -Dsonar.projectName=adservice-buildimage \
