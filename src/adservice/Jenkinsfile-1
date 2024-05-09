@@ -5,7 +5,7 @@ boolean isMyDirChanged() {
       for (file in entry.getAffectedFiles()) {
         
         if (file.getPath().matches("src/adservice(/.*)")) {
-          println("Hey it worked")
+          println("Change detected in adservice directory")
           return true
         }
       }
