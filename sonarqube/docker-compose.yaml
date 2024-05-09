@@ -1,6 +1,6 @@
 services:
   sonarqube:
-    image: my_local_sonarqube
+    image: sonarqube-custom
     build: .
     ports:
       - "9000:9000"
