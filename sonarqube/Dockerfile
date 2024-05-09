@@ -3,7 +3,7 @@ FROM sonarqube:lts-community
 
 USER root
 RUN apk --no-cache add nodejs
-USER sonarqube
+USER sonarqube:lts-community
 
 
 
