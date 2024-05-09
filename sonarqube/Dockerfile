@@ -4,6 +4,6 @@ FROM sonarqube:lts-community
 USER root
 RUN apk --no-cache add nodejs
 USER sonarqube
-EXPOSE 9000
+
 
 
