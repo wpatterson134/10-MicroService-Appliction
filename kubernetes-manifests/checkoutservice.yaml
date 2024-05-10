@@ -40,7 +40,7 @@ spec:
                 - ALL
             privileged: false
             readOnlyRootFilesystem: true
-          image: wpatterson134/checkoutservice:3
+          image: wpatterson134/checkoutservice:4
           ports:
           - containerPort: 5050
           readinessProbe:
