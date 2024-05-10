@@ -41,7 +41,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: wpatterson134/recommendationservice:3
+        image: wpatterson134/recommendationservice:4
         ports:
         - containerPort: 8080
         readinessProbe:
