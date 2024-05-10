@@ -41,7 +41,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: wpatterson134/emailservice:2
+        image: wpatterson134/emailservice:3
         ports:
         - containerPort: 8080
         env:
