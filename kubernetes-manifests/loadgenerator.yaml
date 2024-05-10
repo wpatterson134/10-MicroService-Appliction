@@ -67,7 +67,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: wpatterson134/loadgenerator:3
+        image: wpatterson134/loadgenerator:4
         env:
         - name: FRONTEND_ADDR
           value: "frontend:80"
