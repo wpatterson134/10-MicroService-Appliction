@@ -41,7 +41,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: wpatterson134/currencyservice:3
+        image: wpatterson134/currencyservice:4
         ports:
         - name: grpc
           containerPort: 7000
