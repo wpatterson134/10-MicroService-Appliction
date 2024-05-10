@@ -19,6 +19,8 @@ node {
 
     def app
 
+    def SCANNER_HOME = tool 'sonar-scanner'
+
     stage('Clone repository') {
       
 
@@ -40,9 +42,15 @@ node {
     stage('Test image') {
   
 
-        app.inside {
-            sh 'echo "Tests passed"'
-        }
+       withSonarQubeEnv(installationName: 'sonar') {
+        
+        sh "$SCANNER_HOME/bin/sonar-scanner \
+            -Dsonar.projectKey=recommendationservice-buildimage \
+            -Dsonar.projectName=recommendationservice-buildimage \
+            -Dsonar.source=. \
+            -Dsonar.nodejs.executable=/root/.nvm/versions/node/v20.13.0/bin/node \
+            -Dsonar.java.binaries=."
+      }
     }
 
     stage('Push image') {

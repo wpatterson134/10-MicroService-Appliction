@@ -45,8 +45,8 @@ node {
         withSonarQubeEnv(installationName: 'sonar') {
         
         sh "$SCANNER_HOME/bin/sonar-scanner \
-            -Dsonar.projectKey=adservice-buildimage \
-            -Dsonar.projectName=adservice-buildimage \
+            -Dsonar.projectKey=cartservice-buildimage \
+            -Dsonar.projectName=cartservice-buildimage \
             -Dsonar.source=. \
             -Dsonar.nodejs.executable=/root/.nvm/versions/node/v20.13.0/bin/node \
             -Dsonar.java.binaries=."
