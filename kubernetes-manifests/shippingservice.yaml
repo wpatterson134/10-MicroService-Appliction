@@ -40,7 +40,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: wpatterson134/shippingservice:3
+        image: wpatterson134/shippingservice:4
         ports:
         - containerPort: 50051
         env:
