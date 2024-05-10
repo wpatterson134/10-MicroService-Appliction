@@ -15,9 +15,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: adservice
+  name: adservice-canary
 spec:
-  replicas: 4
+  replicas: 0
   selector:
     matchLabels:
       app: adservice
