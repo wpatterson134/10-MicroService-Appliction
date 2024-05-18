@@ -25,6 +25,7 @@ spec:
     metadata:
       labels:
         app: adservice
+        istio: monitor
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
