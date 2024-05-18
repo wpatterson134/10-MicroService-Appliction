@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: adservice
+      app: adservice-canary
   template:
     metadata:
       labels:
-        app: adservice
+        app: adservice-canary
         istio: monitor
     spec:
       replicas: 5
