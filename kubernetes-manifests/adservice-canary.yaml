@@ -23,6 +23,7 @@ spec:
       labels:
         app: adservice-canary
         istio: monitor
+    spec:
       containers:
       - name: server
         securityContext:
