@@ -24,6 +24,7 @@ spec:
     metadata:
       labels:
         app: checkoutservice
+        istio: monitor
     spec:
       serviceAccountName: default
       securityContext:

@@ -24,6 +24,7 @@ spec:
     metadata:
       labels:
         app: loadgenerator
+        istio: monitor
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:

@@ -24,6 +24,7 @@ spec:
     metadata:
       labels:
         app: redis-cart
+        istio: monitor
     spec:
       securityContext:
         fsGroup: 1000

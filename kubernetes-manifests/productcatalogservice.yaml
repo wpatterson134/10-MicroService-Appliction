@@ -24,6 +24,7 @@ spec:
     metadata:
       labels:
         app: productcatalogservice
+        istio: monitor
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5

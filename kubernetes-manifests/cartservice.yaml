@@ -24,6 +24,7 @@ spec:
     metadata:
       labels:
         app: cartservice
+        istio: monitor
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
