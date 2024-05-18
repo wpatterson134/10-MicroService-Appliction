@@ -70,11 +70,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: adservice-canary
+  name: adservice
 spec:
   type: ClusterIP
   selector:
-    app: adservice-canary
+    app: adservice
   ports:
   - name: grpc
     port: 9555
