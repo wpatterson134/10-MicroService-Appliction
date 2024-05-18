@@ -23,13 +23,6 @@ spec:
       labels:
         app: adservice-canary
         istio: monitor
-      # serviceAccountName: default
-      # terminationGracePeriodSeconds: 5
-      # securityContext:
-      #   fsGroup: 1000
-      #   runAsGroup: 1000
-      #   runAsNonRoot: true
-      #   runAsUser: 1000
       containers:
       - name: server
         securityContext:
