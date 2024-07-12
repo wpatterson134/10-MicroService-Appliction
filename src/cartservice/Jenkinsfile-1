@@ -1,7 +1,7 @@
 @NonCPS
 boolean isMyDirChanged() {
   for (changeLogSet in currentBuild.changeSets) { 
-    for (entry in changeLogSet.getItems()) { 
+    for (entry in changeLogSet.getItems()) { //hello
       for (file in entry.getAffectedFiles()) {
         println(file.getPath())
         if (file.getPath().matches("src/cartservice(/.*)")) {
